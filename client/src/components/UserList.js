@@ -17,7 +17,10 @@ const UserList = () => {
   const fetchUsers = () => {
     axios
       .get("/users")
-      .then((res) => setUsers(res.data))
+      .then((res) => {
+        console.log("Data yang diterima: ", res.data);
+        setUsers(res.data)
+      })
       .catch((err) => console.error("Gagal mengambil data user:", err));
   };
 
